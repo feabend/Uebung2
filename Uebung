@@ -1,0 +1,36 @@
+import math
+
+a_file = open('D:\downloads ferdi\Tasks4.txt', "r")
+
+inputs = []
+kgv = []
+
+
+for line in a_file:
+    parts = line.strip().split(",")
+    input = []
+    input.append(parts[0])
+    input.append(int(parts[1]))  # computation time
+    input.append(int(parts[2]))  # period
+    input.append(int(parts[3]))  # deadline
+    inputs.append(input)
+
+
+a_file.close()
+p = 0.0
+c = 0.0
+for list in inputs:
+
+    print(list)
+
+    p += list[1] / list[2]
+    kgv = [list[2]]
+    c = math.lcm(list[kgv])
+
+
+
+print("Die Prozessórauslastung betraegt: " + str(p))
+print(str(c))
+
+
+# 'D:\downloads ferdi\Tasks4.txt'
